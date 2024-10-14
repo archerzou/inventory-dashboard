@@ -97,11 +97,46 @@ const Sidebar = () => {
 
             {/* LINKS */}
             <div className="flex-grow mt-8">
-                Link
+                <SidebarLink
+                    href="/dashboard"
+                    icon={Layout}
+                    label="Dashboard"
+                    isCollapsed={isSidebarCollapsed}
+                />
+                <SidebarLink
+                    href="/inventory"
+                    icon={Archive}
+                    label="Inventory"
+                    isCollapsed={isSidebarCollapsed}
+                />
+                <SidebarLink
+                    href="/products"
+                    icon={Clipboard}
+                    label="Products"
+                    isCollapsed={isSidebarCollapsed}
+                />
+                <SidebarLink
+                    href="/users"
+                    icon={User}
+                    label="Users"
+                    isCollapsed={isSidebarCollapsed}
+                />
+                <SidebarLink
+                    href="/settings"
+                    icon={SlidersHorizontal}
+                    label="Settings"
+                    isCollapsed={isSidebarCollapsed}
+                />
+                <SidebarLink
+                    href="/expenses"
+                    icon={CircleDollarSign}
+                    label="Expenses"
+                    isCollapsed={isSidebarCollapsed}
+                />
             </div>
 
             {/* FOOTER */}
-            <div className={`mb-10`}>
+            <div className={`${isSidebarCollapsed ? "hidden" : "block"} mb-10`}>
                 <p className="text-center text-xs text-gray-500">&copy; 2024 ArStock</p>
             </div>
         </div>
