@@ -8,7 +8,6 @@ import {
 } from "react-redux";
 import globalReducer from "@/state";
 import { api } from "@/state/api";
-import { setupListeners } from "@reduxjs/toolkit/query";
 
 import {
     persistStore,
@@ -63,7 +62,7 @@ export const makeStore = () => {
                 serializableCheck: {
                     ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
                 },
-            }),
+            }).concat(api.middleware),
     });
 };
 
