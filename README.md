@@ -10,6 +10,22 @@
 ### Database
 ![Database](screenshots/database.png)
 
+### AWS
+![aws.png](screenshots/aws.png)
+
+### EC2
+![ec2.png](screenshots/ec2.png)
+
+### RDS
+![rds.png](screenshots/rds.png)
+
+### AMPLIFY
+![amplify.png](screenshots/amplify.png)
+
+### S3
+![s3.png](screenshots/s3.png)
+
+
 ## Tech Stack
 
 - **Next JS**

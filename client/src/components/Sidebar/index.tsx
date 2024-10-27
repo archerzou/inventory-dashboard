@@ -79,7 +79,13 @@ const Sidebar = () => {
                     isSidebarCollapsed ? "px-5" : "px-8"
                 }`}
             >
-                <div>logo</div>
+                <Image
+                    src="https://s3-archer-inventory.s3.us-east-1.amazonaws.com/logo.png"
+                    alt="arstock-logo"
+                    width={27}
+                    height={27}
+                    className="rounded w-8"
+                />
                 <h1
                     className={`${
                         isSidebarCollapsed ? "hidden" : "block"
