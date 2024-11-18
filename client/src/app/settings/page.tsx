@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Header from "@/components/Header";
+import {useAppSelector} from "@/app/redux";
 
 type UserSetting = {
     label: string;
@@ -18,6 +19,7 @@ const mockSettings: UserSetting[] = [
 ];
 
 const Settings = () => {
+    const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
     const [userSettings, setUserSettings] = useState<UserSetting[]>(mockSettings);
 
     const handleToggleChange = (index: number) => {
@@ -31,7 +33,7 @@ const Settings = () => {
             <Header name="User Settings" />
             <div className="overflow-x-auto mt-5 shadow-md">
                 <table className="min-w-full bg-white rounded-lg">
-                    <thead className="bg-gray-800 text-white">
+                    <thead className={`${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-300'}`}>
                     <tr>
                         <th className="text-left py-3 px-4 uppercase font-semibold text-sm">
                             Setting

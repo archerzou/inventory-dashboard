@@ -1,8 +1,10 @@
 "use client";
 
+import {useAppSelector} from "@/app/redux";
 import { useGetUsersQuery } from "@/state/api";
 import Header from "@/components/Header";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import {dataGridClassNames, dataGridSxStyles} from "@/app/lib/utils";
 
 const columns: GridColDef[] = [
     { field: "userId", headerName: "ID", width: 90 },
@@ -11,6 +13,7 @@ const columns: GridColDef[] = [
 ];
 
 const Users = () => {
+    const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
     const { data: users, isError, isLoading } = useGetUsersQuery();
 
     if (isLoading) {
@@ -31,7 +34,8 @@ const Users = () => {
                 columns={columns}
                 getRowId={(row) => row.userId}
                 checkboxSelection
-                className="bg-white shadow rounded-lg border border-gray-200 mt-5 !text-gray-700"
+                className={dataGridClassNames}
+                sx={dataGridSxStyles(isDarkMode)}
             />
         </div>
     );
